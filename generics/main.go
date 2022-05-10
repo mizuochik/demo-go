@@ -28,6 +28,12 @@ func Set100[V int](ref *V) {
 	*ref = 100
 }
 
+func IdentityInt[V ~int](v V) V {
+	return v
+}
+
+type MyInt int
+
 func main() {
 	fmt.Println(Compare(100, 20))
 	fmt.Println(Sum([]float64{0, 1, 2, 3, 4, 5}))
@@ -35,4 +41,5 @@ func main() {
 	var v int
 	Set100(&v)
 	fmt.Println(v)
+	fmt.Println(IdentityInt(MyInt(100)))
 }
