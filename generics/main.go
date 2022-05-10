@@ -18,7 +18,14 @@ func Sum[V Number](n []V) V {
 	return s
 }
 
+func Add[V interface {
+	float32 | float64
+}](a, b V) V {
+	return a + b
+}
+
 func main() {
 	fmt.Println(Compare(100, 20))
 	fmt.Println(Sum([]float64{0, 1, 2, 3, 4, 5}))
+	fmt.Println(Add(10.0, 20.0))
 }
