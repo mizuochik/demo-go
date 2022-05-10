@@ -24,8 +24,15 @@ func Add[V interface {
 	return a + b
 }
 
+func Set100[V int](ref *V) {
+	*ref = 100
+}
+
 func main() {
 	fmt.Println(Compare(100, 20))
 	fmt.Println(Sum([]float64{0, 1, 2, 3, 4, 5}))
 	fmt.Println(Add(10.0, 20.0))
+	var v int
+	Set100(&v)
+	fmt.Println(v)
 }
